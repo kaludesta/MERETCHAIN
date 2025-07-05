@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal - መሬትChain</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Ethiopic:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="container">
+      <a href="index.html" class="home-link"><h1>መሬትChain</h1></a>
+    </div>
+  </header>
+
+  <main class="container page-content">
+    <!-- Login Form - Shown by default -->
+    <article id="login-section">
+      <header><i class="fas fa-lock"></i> Secure Admin Access</header>
+      <form id="login-form">
+        <p>This area is restricted. Please provide your credentials.</p>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="password" id="access-key" placeholder="Secret Access Key" required>
+        <button type="submit" class="primary-btn">Authenticate</button>
+      </form>
+    </article>
+
+    <!-- Admin Content - Hidden by default -->
+    <div id="admin-content" style="display: none;">
+      <article class="admin-panel">
+        <header><i class="fas fa-user-shield"></i> Official Use: Register New Plot</header>
+        <form id="register-form">
+          <input type="text" id="plot-id" placeholder="Unique Plot ID" required>
+          <input type="text" id="owner-name" placeholder="Owner's Full Name" required>
+          <input type="text" id="gps-coords" placeholder="GPS Coordinates (e.g., 9.02, 38.74)" required>
+          
+          <!-- NEW Relational Location Fields -->
+          <fieldset class="relational-location-fieldset">
+            <legend>Relational Location Description (Optional)</legend>
+            <input type="text" id="north-of" placeholder="North Of (e.g., Main Road)">
+            <input type="text" id="south-of" placeholder="South Of (e.g., River Bank)">
+            <input type="text" id="east-of" placeholder="East Of (e.g., School Compound)">
+            <input type="text" id="west-of" placeholder="West Of (e.g., Farmer Tesfaye's Land)">
+          </fieldset>
+
+          <button type="submit" class="secondary-btn">Register New Plot</button>
+        </form>
+      </article>
+
+      <article id="transaction-management">
+        <header><i class="fas fa-exchange-alt"></i> Land Transaction Management</header>
+        <p>Record new transactions for existing land plots (e.g., Sale, Inheritance, Resolution).</p>
+        <form id="transaction-form">
+          <input type="text" id="transaction-plot-id" placeholder="Existing Plot ID" required>
+          <input type="text" id="new-owner-name" placeholder="New Owner's Full Name" required>
+          <select id="transaction-type" required>
+            <option value="">Select Transaction Type</option>
+            <option value="Sale">Sale</option>
+            <option value="Inheritance">Inheritance</option>
+            <option value="Dispute Resolution">Dispute Resolution</option>
+            <option value="Other">Other</option>
+          </select>
+          <textarea id="transaction-notes" placeholder="Notes (e.g., Sale price, reason)" rows="3"></textarea>
+          <button type="submit" class="primary-btn">Record Transaction</button>
+        </form>
+      </article>
+
+      <article id="credentials-management">
+        <header><i class="fas fa-key"></i> Security Settings</header>
+        <p>Update your login password and secret access key below.</p>
+        <form id="credentials-form">
+          <input type="password" id="current-password" placeholder="Current Password" required>
+          <input type="password" id="new-password" placeholder="New Password" required>
+          <input type="password" id="new-access-key" placeholder="New Secret Access Key" required>
+          <button type="submit" class="primary-btn">Update Credentials</button>
+        </form>
+      </article>
+
+      <article class="data-management">
+        <header><i class="fas fa-database"></i> Ledger Data Management</header>
+        <p>Securely backup the entire land ledger to a file or restore from a previous backup.</p>
+        <div class="button-group">
+          <button id="export-button" class="primary-btn">Export Ledger to File</button>
+          <label for="import-file" class="secondary-btn import-label">Import Ledger from File</label>
+          <input type="file" id="import-file" style="display: none;">
+        </div>
+      </article>
+    </div>
+  </main>
+  
+  <footer class="main-footer">
+    <p>©2025 መሬትChain Project.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

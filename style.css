@@ -1,0 +1,500 @@
+/* ---
+   Theme: The Official Digital Portal for መሬትChain
+   Version: 5.0 (Apex of Authority & Elegance)
+--- */
+
+/* --- Fonts & Core Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Ethiopic:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Official Ethiopian-inspired Palette (Deep & Rich) */
+  --color-primary-navy: #002D57; /* Deepest Navy Blue - Core structural elements */
+  --color-accent-gold: #FCDD09;  /* Vibrant Gold - Key highlights, focus */
+  --color-secondary-green: #008649; /* Rich Green - Primary actions, success */
+  --color-tertiary-red: #DA121A;  /* Bold Red - Alerts, critical info */
+
+  /* Neutral Tones for Backgrounds & Text */
+  --color-bg-body: #eef4f9;      /* Very light, airy blue-grey for the page background */
+  --color-bg-card: #ffffff;      /* Crisp white for all content cards */
+  --color-text-header: #212529;  /* Near-black for main headings */
+  --color-text-body: #343a40;    /* Dark grey for general text */
+  --color-text-light: #6c757d;   /* Muted grey for secondary/descriptive text */
+
+  /* Borders & Shadows */
+  --border-thin: 1px solid rgba(0, 0, 0, 0.08); /* Extremely subtle border */
+  --border-accent: 3px solid var(--color-accent-gold); /* Thicker accent border */
+  --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.05);  /* Very soft, diffused shadow */
+  --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.1); /* Slightly more prominent for hover */
+
+  /* Spacing & Radii */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 1rem;     /* 16px */
+  --space-md: 1.5rem;   /* 24px */
+  --space-lg: 2rem;     /* 32px */
+  --space-xl: 3rem;     /* 48px */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+/* --- Base Body & Layout --- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-bg-body);
+  color: var(--color-text-body);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased; /* Smoother text rendering */
+  -moz-osx-font-smoothing: grayscale; /* Smoother text rendering */
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px; /* Even wider for more spacious feel */
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* --- Official Header --- */
+.main-header {
+  background-color: var(--color-bg-card);
+  border-bottom: var(--border-thin);
+  padding: var(--space-sm) 0;
+  box-shadow: var(--shadow-light);
+  /* A subtle gradient can add depth */
+  background: linear-gradient(to right, var(--color-bg-card), #fbfcfd);
+}
+
+.main-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-header h1, .home-link {
+  font-family: 'Noto Serif Ethiopic', serif;
+  font-size: 3rem; /* Larger, more commanding title */
+  color: var(--color-primary-navy);
+  text-decoration: none;
+  margin: 0;
+  font-weight: 700; /* Ensure it's very bold */
+  letter-spacing: -0.02em; /* Tighter letter spacing for professional look */
+  transition: color 0.3s ease;
+}
+
+.main-header h1:hover, .home-link:hover h1 {
+  color: var(--color-accent-gold); /* Subtle hover effect on title */
+}
+
+/* --- Footer --- */
+.main-footer {
+  background-color: var(--color-primary-navy);
+  color: rgba(255,255,255,0.7);
+  padding: var(--space-lg) 0;
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: auto;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
+.main-footer p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* --- Hero Section (Homepage Banner) --- */
+.hero {
+  text-align: center;
+  padding: 6rem var(--space-lg); /* More vertical padding */
+  background: linear-gradient(135deg, var(--color-primary-navy) 0%, var(--color-primary-medium) 100%); /* Elegant gradient */
+  background-color: #6c757d;
+  color: var(--color-bg-card); /* White text on dark background */
+  box-shadow: inset 0 -5px 15px rgba(0,0,0,0.2); /* Inner shadow for depth */
+}
+.hero h2 {
+  font-family: 'Noto Serif Ethiopic', serif;
+  font-size: 3.5rem; /* Large, commanding headline */
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Subtle text shadow */
+  line-height: 1.2;
+}
+.hero p {
+  font-size: 1.3rem; /* Larger body text */
+  max-width: 800px;
+  margin: 0 auto var(--space-xl) auto;
+  opacity: 0.9;
+  line-height: 1.5;
+  font-weight: 300; /* Lighter weight for hero text */
+}
+.hero-button {
+  background: var(--color-accent-gold);
+  color: var(--color-primary-navy);
+  padding: 1.2rem 2.8rem; /* Larger padding */
+  border-radius: 50px; /* Pill shape */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 15px rgba(252, 221, 9, 0.4);
+}
+.hero-button:hover {
+  background: var(--color-primary-navy);
+  color: var(--color-accent-gold);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Portal Navigation (Homepage Cards) --- */
+.portal-nav .container {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding: var(--space-xl) var(--space-md);
+}
+
+.portal-card {
+  background: var(--color-bg-card);
+  border: var(--border-thin);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-text-body);
+  flex: 1; /* Allow cards to grow equally */
+  max-width: 500px; /* Max width for larger screens */
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+  border-bottom: 5px solid var(--color-primary-navy); /* Strong bottom border accent */
+}
+
+.portal-card:hover {
+  transform: translateY(-8px); /* More pronounced lift */
+  box-shadow: var(--shadow-medium);
+  border-bottom-color: var(--color-accent-gold); /* Gold accent on hover */
+}
+
+.portal-card .fas {
+  font-size: 4rem; /* Larger icons */
+  color: var(--color-primary-navy);
+  margin-bottom: var(--space-md);
+}
+
+.portal-card h3 {
+  font-size: 1.6rem; /* Larger heading */
+  color: var(--color-primary-navy);
+  margin-bottom: var(--space-xs);
+  font-weight: 600;
+}
+
+.portal-card p {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-md);
+  line-height: 1.5;
+}
+
+.portal-card span {
+  display: inline-block; /* Allows padding and consistent spacing */
+  margin-top: var(--space-sm);
+  font-weight: 600;
+  color: var(--color-secondary-green);
+  transition: color 0.3s ease;
+}
+.portal-card:hover span {
+    color: var(--color-primary-navy); /* Text changes color on hover */
+}
+
+/* --- Main Content Area for Sub-pages (Citizen/Admin) --- */
+.page-content {
+  padding: var(--space-xl) 0; /* More vertical padding */
+}
+
+/* --- Article Cards (Forms, Data, Security) --- */
+article {
+  background: var(--color-bg-card);
+  border: var(--border-thin);
+  border-radius: var(--radius-lg); /* Larger radius */
+  padding: var(--space-lg); /* More internal padding */
+  box-shadow: var(--shadow-light);
+  margin-bottom: var(--space-lg); /* More space between cards */
+}
+
+article header {
+  font-size: 1.6rem; /* Larger header text */
+  font-weight: 600;
+  color: var(--color-primary-navy);
+  margin: calc(-1 * var(--space-lg)) calc(-1 * var(--space-lg)) var(--space-lg) calc(-1 * var(--space-lg));
+  padding: var(--space-md) var(--space-lg); /* More padding within header */
+  border-bottom: 1px solid var(--border-color-light);
+  border-top: 5px solid var(--color-primary-navy); /* Stronger top border */
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  display: flex; /* For icon alignment */
+  align-items: center;
+}
+
+article header .fas {
+  margin-right: var(--space-sm);
+  color: var(--color-secondary-green); /* Green icons */
+  font-size: 1.8rem; /* Larger header icons */
+}
+
+article p {
+  color: var(--color-text-body);
+  font-size: 1rem;
+  margin-bottom: var(--space-md);
+  line-height: 1.7; /* Increased line height for readability */
+}
+
+/* --- Forms & Buttons --- */
+form {
+  display: grid;
+  gap: var(--space-sm); /* Consistent gap between form elements */
+}
+
+input[type="text"],
+input[type="search"],
+input[type="password"],
+select, /* Style for the new select dropdown */
+textarea { /* Style for the new textarea */
+  width: 100%;
+  padding: 12px 15px; /* Slightly more horizontal padding */
+  font-size: 1rem;
+  border: var(--border-medium);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box; /* Ensures padding doesn't push width over 100% */
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-navy);
+  box-shadow: 0 0 0 3px rgba(0, 45, 87, 0.15);
+}
+
+button {
+  width: 100%;
+  border: none;
+  font-weight: 600; /* Slightly bolder text */
+  padding: 15px 20px; /* More padding for a substantial feel */
+  border-radius: var(--radius-sm);
+  color: var(--color-bg-card); /* White text on colored buttons */
+  font-size: 1.05rem; /* Slightly larger text */
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow: var(--shadow-light); /* Subtle shadow on buttons */
+}
+
+.primary-btn {
+  background: var(--color-secondary-green);
+}
+.primary-btn:hover {
+  background: #00703e; /* Slightly darker green */
+  box-shadow: 0 6px 12px rgba(0, 134, 73, 0.3);
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  background: var(--color-primary-navy);
+}
+.secondary-btn:hover {
+  background: #001f3d; /* Slightly darker navy */
+  box-shadow: 0 6px 12px rgba(0, 45, 87, 0.3);
+  transform: translateY(-2px);
+}
+
+/* --- Results & Data Management Specifics --- */
+#results-container hr {
+  border-top: 1px solid var(--border-color-light);
+  margin: var(--space-md) 0;
+}
+#results-container h4, #results-container h5 {
+  color: var(--color-primary-navy);
+  margin-bottom: var(--space-sm);
+}
+
+#result-history p {
+  background-color: var(--color-bg-body); /* Body background color for history items */
+  border-left: 5px solid var(--color-secondary-green); /* Stronger left border */
+  padding: 12px 15px;
+  margin-bottom: var(--space-xs);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-text-body);
+}
+#result-history p strong { color: var(--color-primary-navy); }
+#result-history p i { color: var(--color-text-light); }
+
+
+.data-management .button-group {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+}
+.data-management .import-label {
+  display: inline-block;
+  text-align: center;
+  padding: 15px 20px; /* Match button padding */
+  cursor: pointer;
+  background: var(--color-primary-navy); /* Ensure label button has proper background */
+  border-radius: var(--radius-sm);
+  color: var(--color-bg-card);
+  font-weight: 600;
+  transition: all 0.25s ease-in-out;
+  box-shadow: var(--shadow-light);
+}
+.data-management .import-label:hover {
+    background: #001f3d;
+    box-shadow: 0 6px 12px rgba(0, 45, 87, 0.3);
+    transform: translateY(-2px);
+}
+
+
+/* --- Enhanced Citizen Search Results --- */
+.search-form-grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.search-form-grid button {
+  grid-column: 1 / -1;
+  margin-top: var(--space-sm); /* Add a little space above the search button */
+}
+
+#search-results-list {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly wider cards */
+  margin-top: var(--space-lg);
+  padding: var(--space-sm); /* Small padding for the grid itself */
+}
+
+.search-result-card {
+  background: var(--color-bg-card);
+  border: var(--border-thin);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-light);
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  border-left: 5px solid var(--color-primary-navy); /* Strong left border */
+}
+.search-result-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+  border-left-color: var(--color-accent-gold); /* Gold on hover */
+}
+.search-result-card h3 {
+  font-size: 1.3rem;
+  color: var(--color-primary-navy);
+  margin-top: 0;
+  margin-bottom: var(--space-xs);
+  font-weight: 600;
+}
+.search-result-card p {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-xs);
+}
+.search-result-card span {
+  display: block;
+  font-weight: 500;
+  color: var(--color-secondary-green);
+  margin-top: var(--space-sm);
+  transition: color 0.3s ease;
+}
+.search-result-card:hover span {
+    color: var(--color-primary-navy);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .hero h2 { font-size: 2.8rem; }
+  .hero p { font-size: 1.1rem; }
+  .main-header h1 { font-size: 2.2rem; }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 var(--space-sm); }
+  .portal-nav .container { flex-direction: column; align-items: center; gap: var(--space-md); padding: var(--space-lg) var(--space-sm); }
+  .portal-card { width: 100%; max-width: 400px; padding: var(--space-md); }
+  .hero { padding: 4rem var(--space-sm); }
+  .hero h2 { font-size: 2.2rem; }
+  .hero p { font-size: 1rem; }
+  .hero-button { padding: 0.8rem 1.8rem; font-size: 0.9rem; }
+  
+  .page-content { padding: var(--space-lg) 0; }
+  article { padding: var(--space-md); }
+  article header { padding: var(--space-md); margin-left: calc(-1 * var(--space-md)); margin-right: calc(-1 * var(--space-md)); font-size: 1.4rem; }
+  article header .fas { font-size: 1.6rem; }
+
+  .search-form-grid { grid-template-columns: 1fr; }
+  .search-form-grid button { grid-column: auto; }
+  #search-results-list { grid-template-columns: 1fr; }
+  .data-management .button-group { flex-direction: column; }
+}
+/* --- NEW STYLES FOR RELATIONAL LOCATION --- */
+.relational-location-fieldset {
+  border: var(--border-thin);
+  padding: var(--space-sm) var(--space-md);
+  margin-top: var(--space-sm);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-body); /* Slightly different background for the fieldset */
+}
+.relational-location-fieldset legend {
+  font-weight: 500;
+  color: var(--color-primary-navy);
+  padding: 0 var(--space-xs);
+  font-size: 1.1rem;
+}
+
+.relational-location-display {
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  background-color: var(--color-bg-body); /* Consistent with fieldset */
+  border-radius: var(--radius-md);
+  border: var(--border-thin);
+}
+.relational-location-display h5 {
+  color: var(--color-primary-navy);
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+  font-size: 1.1rem; /* Consistent with legend */
+}
+.relational-location-display p {
+  font-size: 0.95rem;
+  margin-bottom: var(--space-xs);
+}
+.relational-location-display p strong {
+  color: var(--color-text-dark);
+  display: inline-block; /* Helps with alignment if needed */
+  min-width: 80px; /* Align the values nicely */
+}
+
+/* Style for the GPS link icon */
+.gps-link-icon {
+  font-size: 0.8em; /* Make icon slightly smaller */
+  margin-left: var(--space-xs);
+  color: var(--color-secondary-green); /* Use action green for the link icon */
+  vertical-align: middle; /* Align with text */
+}
+
+/* Ensure the GPS link itself is styled nicely */
+#result-gps-link {
+    text-decoration: none;
+    color: var(--color-text-body); /* Standard text color for the link */
+    transition: color 0.2s ease;
+}
+#result-gps-link:hover {
+    color: var(--color-secondary-green); /* Change color on hover */
+    text-decoration: underline;
+}
